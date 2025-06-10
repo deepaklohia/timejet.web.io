@@ -1,0 +1,16 @@
+<?php
+require_once "config.php";
+$record_id =  $_POST["del_id"] ;
+$sql = "DELETE FROM tj_empdata WHERE id = ? ";
+
+if ($stmt = $conn->prepare($sql)) {
+    $stmt->bind_param("i", $record_id);    
+    //$result= mysqli_stmt_execute($conn, $sql) ;
+    $stmt-> execute();
+}
+
+?>
+
+
+
+
